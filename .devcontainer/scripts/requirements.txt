@@ -1,0 +1,8 @@
+pywinrm
+jmespath
+requests
+ansible
+setuptools
+molecule
+molecule[docker]
+ansible-lint

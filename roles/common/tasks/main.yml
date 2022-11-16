@@ -1,0 +1,5 @@
+---
+# tasks file for common role
+  - name: Debug message
+    ansible.builtin.debug:
+      msg: Task from common role

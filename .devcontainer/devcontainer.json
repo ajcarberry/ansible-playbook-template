@@ -1,0 +1,35 @@
+{
+	"name": "Ansible",
+	"dockerFile": "Dockerfile",
+	"runArgs": ["--init"],
+	"mounts": [ "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind" ],
+	"overrideCommand": false,
+		
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": { 
+				"terminal.integrated.profiles.linux": {
+					"bash": {
+						"path": "/bin/zsh"
+					}
+				}
+			},
+			
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"redhat.ansible",
+				"redhat.vscode-yaml",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	//"postCreateCommand": "pip3 install -r requirements.txt",
+
+	// Comment out to connect as root instead.
+	"remoteUser": "vscode"
+}

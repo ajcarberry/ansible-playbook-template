@@ -1,0 +1,10 @@
+all:
+  hosts:
+    host1.example.com:
+  children:
+    common:
+      hosts:
+        host2.example.com:
+    uncommon:
+      hosts:
+        host3.example.com:

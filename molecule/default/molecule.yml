@@ -1,0 +1,24 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: instance-1
+    image: ubuntu:latest
+  - name: instance-2
+    image: ubuntu:latest
+    groups:
+      - "common"
+  - name: instance-3
+    image: ubuntu:latest
+    groups:
+      - "uncommon"
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+provisioner:
+  name: ansible
+verifier:
+  name: ansible

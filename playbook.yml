@@ -1,0 +1,27 @@
+---
+
+- name: Play to be run on all hosts 
+  hosts: all
+  become: yes
+  tasks:
+    - name: Debug message
+      ansible.builtin.debug:
+        msg: Task from playbook. To be run on all hosts
+
+- name: Play, including a role, to be run on "common" hosts 
+  hosts: common
+  become: yes
+  roles:
+    - common
+  tasks:
+    - name: Debug message
+      ansible.builtin.debug:
+        msg: Task from playbook. To be run on hosts in "common" group.
+
+- name: Play to run be on "uncommon" hosts 
+  hosts: uncommon
+  become: yes
+  tasks:
+    - name: Debug message
+      ansible.builtin.debug:
+        msg: Task from playbook. To be run on hosts in "uncommon" group.

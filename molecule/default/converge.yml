@@ -1,0 +1,4 @@
+---
+
+- name: Template Playbook
+  ansible.builtin.import_playbook: ../../playbook.yml

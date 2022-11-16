@@ -1,0 +1,7 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include role.common"
+      ansible.builtin.include_role:
+        name: "role.common"
