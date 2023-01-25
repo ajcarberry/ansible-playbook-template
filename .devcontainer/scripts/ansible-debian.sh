@@ -52,7 +52,7 @@ check_packages() {
 export DEBIAN_FRONTEND=noninteractive
 
 # Install Python3 and Pip
-apt-get install -y python3 python3-pip python3-dev --no-install-recommends
+apt-get install -y python3 python3-pip --no-install-recommends
 
 # Install pip, virtualenv updates and Ansible + dependencies
 if [ "${USERNAME}" = "root" ] && [ "${ENABLE_NONROOT_PIP}" = false ]; then 
@@ -62,3 +62,5 @@ else
     su - $USERNAME -c "python3 -m pip install --no-cache-dir --upgrade pip virtualenv"
     su - $USERNAME -c "python3 -m pip install --no-cache-dir -r /tmp/scripts/requirements.txt"
 fi
+
+apt-get install -y sshpass --no-install-recommends

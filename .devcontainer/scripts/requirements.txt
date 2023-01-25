@@ -1,8 +1,9 @@
 pywinrm
 jmespath
 requests
-ansible
+ansible==6.7.0
 setuptools
 molecule
 molecule[docker]
 ansible-lint
+netaddr
